@@ -180,4 +180,32 @@ class Collection {
     }
   }
 
+  // List[Int] = List(1, 2, 3, 4)
+  1 :: 2 :: 3 :: 4 :: Nil
+
+  // List[Int] = List(1, 2, 3, 4)
+  List(1, 2) ++ List(3, 4)
+
+  // List[Int] = List(1, 3, 4, 5)
+  List(1) ++ List(3,4,5)
+
+  // List[Int] = List(3, 4, 5, 1)
+  List(3, 4, 5) ++ List(1)
+
+  // String = 12345
+  List(1, 2, 3, 4, 5).mkString
+
+  // String = 1,2,3,4,5
+  List(1, 2, 3, 4, 5).mkString(",")
+
+  // String = [1,2,3,4,5]
+  List(1, 2, 3, 4, 5).mkString("[", ",", "]")
+
+  // (1 * 2) + (1 * 3) + (1 * 4)と言う風に畳み込みながら計算されている。
+  // Int = 24
+  List(2, 3, 4).foldLeft(1)((x, y) => x * y)
+
+
+
+
 }
