@@ -205,7 +205,4 @@ class Collection {
   // Int = 24
   List(2, 3, 4).foldLeft(1)((x, y) => x * y)
 
-
-
-
 }
