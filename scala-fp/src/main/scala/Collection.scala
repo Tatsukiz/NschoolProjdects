@@ -205,4 +205,13 @@ class Collection {
   // Int = 24
   List(2, 3, 4).foldLeft(1)((x, y) => x * y)
 
+  // List[Int] = List(2, 4, 6, 8, 10)
+  List(1,2,3,4,5).map(x => x * 2)
+
+  def filter2[T](list: List[T])(f: T => Boolean): List[T] =
+    list.foldLeft(Nil: List[T])((x, y) => if (f(y))y :: x else x).reverse
+
+  // List[Int] = List(1, 3, 5)
+  filter2(List(1,2,3,4,5))(x => x % 2 == 1)
+
 }
