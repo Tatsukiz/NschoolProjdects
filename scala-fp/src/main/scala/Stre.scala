@@ -24,22 +24,22 @@ class Stre {
 
   // 余再帰
   // scala.collection.immutable.Stream[Int] = Stream(1, ?)
-  val s = Stream.iterate(1) {
+  val str = Stream.iterate(1) {
     n =>
       println("Calculate! 3 + " + n)
       3 + n
   }
 
   // Int = 1
-  s(0)
+  str(0)
 
   // Calculate! 3 + 1
   // Int = 4
-  s(1)
+  str(1)
 
   // s(2)
   // Calculate! 3 + 4
-  s(2)
+  str(2)
 
   // 遅延初期化
   // ten: Int = <lazy>
@@ -90,4 +90,31 @@ class Stre {
     fibs.filter(x => x % 2 == 0).map(x => x * 3).take(5).foldLeft(0)(_ + _)
   }
 
+  // 暗黙 //
+  // import scala.language.implicitConversions
+  import scala.language.implicitConversions
+
+  // intToBoolean: (arg: Int)Boolean
+  implicit def intToBoolean(arg: Int): Boolean = arg != 0
+
+  // 1は真なり
+  if(1) println("1は真なり")
+
+
 }
+
+// pimp my library パターンの実装
+
+// ↓出力
+/** defined class RichString */
+
+// scala コンソールの入力値↓
+/** implicit class RichString(val src: String) {
+  def smile: String = src + ":-)"
+}
+  */
+
+  //出力↓
+  /** String = Hi, :-) */
+  // scala コンソールの入力値↓
+  /** "Hi, ".smile */
