@@ -13,3 +13,5 @@ libraryDependencies += "org.mockito" % "mockito-core" % "2.21.0" % "test"
 libraryDependencies += "org.scala-lang" % "scala-reflect" % scalaVersion.value
 
 scalacOptions ++= Seq("-encoding", "UTF-8")
+
+scalacOptions in Global += "-language:experimental.macros"
